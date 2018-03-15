@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -82,7 +82,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/15/publickey-md/">publickey.md</a>
+      <a class="article-title" href="/2018/03/15/publickey-md/">hexo部署到github时由于deploy参数引起的的报错 Permission denied (publickey)</a>
     </h1>
   
 
@@ -90,51 +90,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Error: &lt;git@github.com: Permission denied (publickey).</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure>
-<p>这个错误有时是因为github账号的ssh公钥信息设置出现问题，但我这里是因为从官方文档复制下来的参数格式出现问题<br>据文档介绍，部署type是git的话，好像必须先安装hexo-deployer-git，那么我就安装了，然后修改配置为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt;</span><br><span class="line">  branch: [branch]</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></figure></p>
-<p>这里使用的<code>repo: &lt;repository url&gt;</code>尖括号会引起题中的报错。可能这样写只是markdown的语法提醒，去掉之后就可以成功部署了</p>
+        <p>Error: &lt;<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: Permission denied (publickey).<br>fatal: Could not read from remote repository.<br>Please make sure you have the correct access rights<br>and the repository exists.</p>
+<p>  在hexo搭建博客最后往github上面部署时出现上面这个错误，有时是因为github账号的ssh公钥信息设置出现问题，但这次是因为从官方文档复制下来的参数格式出现问题<br>  据文档介绍，部署type是git的话，好像必须先安装hexo-deployer-git，那么我就安装了，然后修改配置为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt;</span><br><span class="line">  branch: [branch]</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></figure></p>
+<p>这里使用的<code>repo: &lt;repository url&gt;</code>尖括号会引起题中的报错。之所以这样写可能只是语法提醒，去掉之后就可以成功部署了</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/15/publickey-md/" data-id="cjesjtqnh0002u1s6tq5fqyvz" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/15/publickey-md/" data-id="cjesjtqnh0002u1s6tq5fqyvz" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-publicKey-issue" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/15/publicKey-issue/" class="article-date">
-  <time datetime="2018-03-15T12:53:44.977Z" itemprop="datePublished">2018-03-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>title: hexo部署到github时由于deploy参数引起的的报错 Permission denied (publickey)</p>
-<h2 id="tag-dir-hexo"><a href="#tag-dir-hexo" class="headerlink" title="tag_dir: hexo"></a>tag_dir: hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Error: &lt;git@github.com: Permission denied (publickey).</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure>
-<p>这个错误有时是因为github账号的ssh公钥信息设置出现问题，但我这里是因为从官方文档复制下来的参数格式出现问题<br>据文档介绍，部署type是git的话，好像必须先安装hexo-deployer-git，那么我就安装了，然后修改配置为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt;</span><br><span class="line">  branch: [branch]</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></figure></p>
-<p>这里使用的<code>repo: &lt;repository url&gt;</code>尖括号会引起题中的报错。可能这样写只是markdown的语法提醒，去掉之后就可以成功部署了</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/15/publicKey-issue/" data-id="cjesjtqnf0001u1s6qwrc0j1b" class="article-share-link">Compartir</a>
-      
-      
     </footer>
   </div>
   
@@ -177,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/15/hello-world/" data-id="cjesjtqn90000u1s6ifdyey0u" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2018/03/15/hello-world/" data-id="cjesjtqn90000u1s6ifdyey0u" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -208,7 +175,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
     </div>
@@ -217,7 +184,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -227,16 +194,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2018/03/15/publickey-md/">publickey.md</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/15/publicKey-issue/">(no title)</a>
+            <a href="/2018/03/15/publickey-md/">hexo部署到github时由于deploy参数引起的的报错 Permission denied (publickey)</a>
           </li>
         
           <li>
@@ -256,7 +219,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 吔茶<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
